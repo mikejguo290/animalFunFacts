@@ -18,6 +18,7 @@ for (let animal in animals){
         alt={animal}
         src={animals[animal].image}
         aria-label={animal}
+        onClick={displayFact}
         role='button'
         />
         )
@@ -29,7 +30,8 @@ const displayFact =(e)=>{
     const chosenAnimal=animals[animal]; // returns an animal object
     const randIndex=Math.floor(Math.random()*chosenAnimal.facts.length);
     const randFact=chosenAnimal.facts[randIndex];
-
+    document.getElementById('fact').innerHTML=randFact;
+}
 //hold the JSX expression to contain the title;
 const animalFacts=(
     <div>
