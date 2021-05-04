@@ -35,6 +35,13 @@ const animalFacts=(
     </div>
 )
 
+//function to select a random fact for the clicked on animal.
+const displayFact =(e)=>{
+    const animal=e.target.alt;
+    const chosenAnimal=animals[animal]; // returns an animal object
+    const randIndex=Math.floor(Math.random()*chosenAnimal.facts.length);
+    const randFact=chosenAnimal.facts[randIndex];
+}
 ReactDOM.render(
     animalFacts,
     document.getElementById('root')
