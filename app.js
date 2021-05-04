@@ -23,6 +23,12 @@ for (let animal in animals){
         )
   );
 }
+//function to select a random fact for the clicked on animal.
+const displayFact =(e)=>{
+    const animal=e.target.alt;
+    const chosenAnimal=animals[animal]; // returns an animal object
+    const randIndex=Math.floor(Math.random()*chosenAnimal.facts.length);
+    const randFact=chosenAnimal.facts[randIndex];
 
 //hold the JSX expression to contain the title;
 const animalFacts=(
@@ -32,16 +38,11 @@ const animalFacts=(
         <div className="animals">
             {images}
         </div>
+        <p id="fact"></p>
     </div>
 )
 
-//function to select a random fact for the clicked on animal.
-const displayFact =(e)=>{
-    const animal=e.target.alt;
-    const chosenAnimal=animals[animal]; // returns an animal object
-    const randIndex=Math.floor(Math.random()*chosenAnimal.facts.length);
-    const randFact=chosenAnimal.facts[randIndex];
-}
+
 ReactDOM.render(
     animalFacts,
     document.getElementById('root')
