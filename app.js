@@ -6,6 +6,8 @@ const title='';
 
 //can call one JSX element in another by using curly braces. 
 const background=<img className="background" alt="ocean" src="/images/ocean.jpg"/>
+//this variable controls whether the background is shown using && operator. x && js expression. the RHS of the operator always evaluates to true. overal, depends on truthiness of x. 
+const showBackgroun = false;
 
 // for each animal in animals imported above, add a new <img /> to that array. 
 const images = [];
@@ -36,7 +38,7 @@ const displayFact =(e)=>{
 const animalFacts=(
     <div>
         <h1>{title===''? 'Click an animal for a fun fact.': title }</h1> 
-        {background}
+        {showBackground && background}
         <div className="animals">
             {images}
         </div>
