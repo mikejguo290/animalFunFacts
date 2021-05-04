@@ -37,7 +37,7 @@ const displayFact =(e)=>{
 //hold the JSX expression to contain the title;
 const animalFacts=(
     <div>
-        <h1>{title===''? 'Click an animal for a fun fact.': title }</h1> 
+        <h1>{title || 'Click an animal for a fun fact.'}</h1> 
         {showBackground && background}
         <div className="animals">
             {images}
